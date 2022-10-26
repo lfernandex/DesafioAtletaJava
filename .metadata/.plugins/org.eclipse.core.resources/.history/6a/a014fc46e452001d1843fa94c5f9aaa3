@@ -1,0 +1,39 @@
+package DesafioAtletaJava;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int N;
+		double alt;
+		String nome;
+		char sexo;
+		
+		System.out.println("Qual a quantidae de atletas? ");
+		N = sc.nextInt();
+		
+		for(int i = 0; i < N; i++) {
+			System.out.println("Digite os dados do atleta numero " + i++ + ": ");
+			System.out.println("Nome: ");
+			nome = sc.next();
+			System.out.println("Sexo: "); 
+			sexo = sc.next().charAt(0);
+			   	if (sexo != 'F' && sexo != 'M') {
+			   		System.out.println("Valor invalido! Por favor, digite novamente: ");
+			   		sexo = sc.next().charAt(0);
+			   	}
+			
+			
+			
+		}
+		
+		sc.close();
+		
+	}
+
+}

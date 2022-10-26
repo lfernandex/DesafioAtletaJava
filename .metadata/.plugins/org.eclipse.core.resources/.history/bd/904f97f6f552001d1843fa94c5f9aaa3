@@ -1,0 +1,74 @@
+package DesafioAtletaJava;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int N, qteM = 0, qteF = 0;
+		double alt, maiorAlt =0, altF =0;
+		double peso = 0, somaPeso = 0, pesoMedio = 0, pctgm = 0;
+		String nome, maisAlt;
+		char sexo;
+		
+		
+		System.out.println("Qual a quantidae de atletas? ");
+		N = sc.nextInt();
+		
+		for(int i = 1; i <= N; i++) {
+			System.out.println("Digite os dados do atleta numero: ");
+			
+			System.out.println("Nome: ");
+			nome = sc.next();
+			
+			System.out.println("Sexo: "); 
+			sexo = sc.next().charAt(0);
+			   	while (sexo != 'F' && sexo != 'M') {
+			   		System.out.println("Valor invalido! Por favor, digite 'F' ou 'M': ");
+			   		sexo = sc.next().charAt(0);
+			   	}
+			   	
+			System.out.println("Altura");
+			alt = sc.nextDouble();
+				while (alt <= 0) {
+					System.out.println("Valor invalido! Por favor, digite um valor valido:");
+					alt = sc.nextDouble();
+				}
+				if(maiorAlt < alt) {
+					maiorAlt = alt;
+					maisAlt = nome;
+				}
+				if(sexo == 'M') {
+					qteM = qteM++;					
+				}
+				if(sexo =='F'){
+					qteF = qteF++;
+					altF = altF + alt;
+				}
+			System.out.println("Peso: ");
+			peso = sc.nextDouble();
+				while(peso <= 0) {
+					System.out.println("Valor invalido! Por favor, digite um valor valido:");
+					peso = sc.nextDouble();
+				}
+			somaPeso = somaPeso + peso;
+		}
+		
+		pesoMedio = somaPeso / N;
+		pctgm = qteM / N * 100;
+		
+		System.out.println();
+		System.out.println("Relatório");
+		System.out.printf("Peso medio dos atletas: %.3f", pesoMedio);
+		System.out.printf("Atleta mais alto %s" + maisAlt);
+		System.out.printf("Porcentagem de homens: %.1f %%%n", pctgm);
+		
+		sc.close();
+		
+	}
+
+}

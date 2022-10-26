@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\lusca\OneDrive\Área de Trabalho\Area de Trabalho\DevSuperior\Desafios\Java\Teste\DesafioAtletaJava\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3139490174.index
+2314302289.index
